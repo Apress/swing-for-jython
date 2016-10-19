@@ -1,0 +1,30 @@
+protected void | addImpl( Component comp, Object constraints, int index ) | Adds the specified child Component.
+protected JRootPane | createRootPane() | Called by the constructor methods to create the default rootPane.
+protected void | frameInit() | Called by the constructors to init the JFrame properly.
+AccessibleContext | getAccessibleContext() | Gets the AccessibleContext associated with this JFrame.
+Container | getContentPane() | Returns the contentPane object for this frame.
+int | getDefaultCloseOperation() | Returns the operation that occurs when the user initiates a "close" on this frame.
+Component | getGlassPane() | Returns the glassPane object for this frame.
+Graphics | getGraphics() | Creates a graphics context for this component.
+JMenuBar | getJMenuBar() | Returns the menubar set on this frame.
+JLayeredPane | getLayeredPane() | Returns the layeredPane object for this frame.
+JRootPane | getRootPane() | Returns the rootPane object for this frame.
+TransferHandler | getTransferHandler() | Gets the transferHandler property.
+static boolean | isDefaultLookAndFeelDecorated() | Returns true if newly created JFrames should have their Window decorations provided by the current look and feel.
+protected boolean | isRootPaneCheckingEnabled() | Returns whether calls to add and setLayout are forwarded to the contentPane.
+protected String | paramString() | Returns a string representation of this JFrame.
+protected void | processWindowEvent( WindowEvent e ) | Processes window events occurring on this component.
+void | remove( Component comp ) | Removes the specified component from the container.
+void | repaint( long time, int x, int y, int width, int height ) | Repaints the specified rectangle of this component within time milliseconds.
+void | setContentPane( Container contentPane ) | Sets the contentPane property.
+void | setDefaultCloseOperation( int operation ) | Sets the operation that will happen by default when the user initiates a "close" on this frame.
+static void | setDefaultLookAndFeelDecorated( boolean defaultLookAndFeelDecorated ) | Provides a hint as to whether or not newly created JFrames should have their Window decorations (such as borders, widgets to close the window, title...) provided by the current look and feel.
+void | setGlassPane( Component glassPane ) | Sets the glassPane property.
+void | setIconImage( Image image ) | Sets the image to be displayed as the icon for this window.
+void | setJMenuBar( JMenuBar menubar ) | Sets the menubar for this frame.
+void | setLayeredPane( JLayeredPane layeredPane ) | Sets the layeredPane property.
+void | setLayout( LayoutManager manager ) | Sets the LayoutManager.
+protected void | setRootPane( JRootPane root ) | Sets the rootPane property.
+protected void | setRootPaneCheckingEnabled( boolean enabled ) | Sets whether calls to add and setLayout are forwarded to the contentPane.
+void | setTransferHandler( TransferHandler newHandler ) | Sets the transferHandler property, which is a mechanism to support transfer of data into this component.
+void | update( Graphics g ) | Just calls paint( g ).

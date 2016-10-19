@@ -1,0 +1,86 @@
+#-------------------------------------------------------------------------------
+#    Name: consoleTimeout_00.jacl
+#    From: Swing for Jython
+#      By: Robert A. (Bob) Gibson [rag]
+# ISBN-13: 978-1-4824-0818-2 (paperback)
+# ISBN-13: 978-1-4824-0817-5 (electronic)
+# website: http://www.apress.com/978148420818
+#    Role: Siple wsadmin Jacl script to modify the Admin console timeout value
+#    Note: A WebSphere Application Server environment is required.
+#   Usage: wsadmin -f consoleTimeout_00.jacl <timeoutValue>
+# Example: ./wsadmin.sh -f consoleTimeout.jacl 30
+# History:
+#   date    who  ver   Comment
+# --------  ---  ---  ----------
+# 14/10/30  rag  0.0  New - ...
+#-------------------------------------------------------------------------------
+#    Note: Based upon the WebSphere Application Server documentation
+#    Long: http://publib.boulder.ibm.com/infocenter/wasinfo/v7r0/index.jsp?
+#          topic=/com.ibm.websphere.nd.doc/info/ae/isc/cons_sessionto.html
+#   Short: http://goo.gl/GvZOj
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# Verify user specified command line value
+#-------------------------------------------------------------------------------
+if { $argc != 1 } {
+    puts "\nCommand: consoleTimeout.jacl\n"
+    puts "Purpose: wsadmin script to change the WebSphere Admin Console timeout value.\n"
+    puts "  Usage: wsadmin -f consoleTimeout.jacl <timeoutValue>\n"
+    puts "Example: ./wsadmin.sh -f consoleTimeout.jacl 30"
+    exit
+}
+set timeout [lindex $argv 0]
+
+#-------------------------------------------------------------------------------
+# Get the configuration IDs for the objects in which we are interested
+#-------------------------------------------------------------------------------
+set dep     [$AdminConfig getid /Deployment:isclite/]
+set appDep  [$AdminConfig list ApplicationDeployment $dep]
+set sesMgmt [$AdminConfig list SessionManager $appDep] 
+
+#-------------------------------------------------------------------------------
+# If a SessionManager object exists, modify it.  Otherwise, create a new one.
+#-------------------------------------------------------------------------------
+if { $sesMgmt == "" } {
+     #--------------------------------------------------------------------------
+     # Get applicationConfig reference to create new SessionManager
+     #--------------------------------------------------------------------------
+     set appConfig [$AdminConfig list ApplicationConfig $appDep]
+     if { $appConfig == "" } {
+         #----------------------------------------------------------------------
+         # Create a new ApplicationConfig object
+         #----------------------------------------------------------------------
+         set appConfig [$AdminConfig create ApplicationConfig $appDep {}]
+         #----------------------------------------------------------------------
+         # Create a new SessionManager using new Application Config just created
+         #----------------------------------------------------------------------
+         set sesMgmt [$AdminConfig create SessionManager $appConfig {}] 
+     } else {
+         #----------------------------------------------------------------------
+         # Create new SessionManager using the existing ApplicationConfig
+         #----------------------------------------------------------------------
+         set sesMgmt [$AdminConfig create SessionManager $appConfig {}] 
+     }
+} 
+
+#-------------------------------------------------------------------------------
+# Get tuningParams configID
+#-------------------------------------------------------------------------------
+set tuningParams [$AdminConfig showAttribute $sesMgmt tuningParams]
+if { $tuningParams == "" } {
+     #--------------------------------------------------------------------------
+     # Create a new tuningParams 
+     #--------------------------------------------------------------------------
+     $AdminConfig create TuningParams $sesMgmt "{invalidationTimeout $timeout}"
+} else {
+     #--------------------------------------------------------------------------
+     # Modify the existing one
+     #--------------------------------------------------------------------------
+     $AdminConfig modify $tuningParams "{invalidationTimeout $timeout}"
+}
+
+#-------------------------------------------------------------------------------
+# Save the configuration changes
+#-------------------------------------------------------------------------------
+$AdminConfig save

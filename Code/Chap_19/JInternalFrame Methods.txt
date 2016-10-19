@@ -1,0 +1,78 @@
+protected void | addImpl( Component comp, Object constraints, int index ) | Adds the specified child Component.
+void | addInternalFrameListener( InternalFrameListener l ) | Adds the specified listener to receive internal frame events from this internal frame.
+protected JRootPane | createRootPane() | Called by the constructor to set up the JRootPane.
+protected void | dispose() | Makes this internal frame invisible, unselected, and closed.
+protected void | doDefaultCloseAction() | Fires an INTERNAL_FRAME_CLOSING event and then performs the action specified by the internal frame's default close operation.
+protected void | fireInternalFrameEvent( int id ) | Fires an internal frame event.
+AccessibleContext | getAccessibleContext() | Gets the AccessibleContext associated with this JInternalFrame.
+Container | getContentPane() | Returns the content pane for this internal frame.
+int | getDefaultCloseOperation() | Returns the default operation that occurs when the user initiates a "close" on this internal frame.
+JInternalFrame.JDesktopIcon | getDesktopIcon() | Returns the JDesktopIcon used when this JInternalFrame is iconified.
+JDesktopPane | getDesktopPane() | Convenience method that searches the ancestor hierarchy for a JDesktop instance.
+Container | getFocusCycleRootAncestor() | Always returns null because JInternalFrames must always be roots of a focus traversal cycle.
+Component | getFocusOwner() | If this JInternalFrame is active, returns the child that has focus.
+Icon | getFrameIcon() | Returns the image displayed in the title bar of this internal frame (usually in the top-left corner).
+Component | getGlassPane() | Returns the glass pane for this internal frame.
+InternalFrameListener[] | getInternalFrameListeners() | Returns an array of all the InternalFrameListeners added to this JInternalFrame with addInternalFrameListener.
+JMenuBar | getJMenuBar() | Returns the current JMenuBar for this JInternalFrame, or null if no menu bar has been set.
+Cursor | getLastCursor() | Returns the last Cursor that was set by the setCursor method that is not a resizable Cursor.
+int | getLayer() | Convenience method for getting the layer attribute of this component.
+JLayeredPane | getLayeredPane() | Returns the layered pane for this internal frame.
+JMenuBar | getMenuBar()     Deprecated. | As of Swing version 1.0.3, replaced by getJMenuBar().
+Component | getMostRecentFocusOwner() | Returns the child component of this JInternalFrame that will receive the focus when this JInternalFrame is selected.
+Rectangle | getNormalBounds() | If the JInternalFrame is not in maximized state, returns getBounds(); otherwise, returns the bounds that the JInternalFrame would be restored to.
+JRootPane | getRootPane() | Returns the rootPane object for this internal frame.
+String | getTitle() | Returns the title of the JInternalFrame.
+InternalFrameUI | getUI() | Returns the look-and-feel object that renders this component.
+String | getUIClassID() | Returns the name of the look-and-feel class that renders this component.
+String | getWarningString() | Gets the warning string that is displayed with this internal frame.
+protected void | hide() | 
+boolean | isClosable() | Returns whether this JInternalFrame can be closed by some user action.
+boolean | isClosed() | Returns whether this JInternalFrame is currently closed.
+boolean | isFocusCycleRoot() | Always returns true because all JInternalFrames must be roots of a focus traversal cycle.
+boolean | isIcon() | Returns whether the JInternalFrame is currently iconified.
+boolean | isIconifiable() | Gets the iconable property, which by default is false.
+boolean | isMaximizable() | Gets the value of the maximizable property.
+boolean | isMaximum() | Returns whether the JInternalFrame is currently maximized.
+boolean | isResizable() | Returns whether the JInternalFrame can be resized by some user action.
+protected boolean | isRootPaneCheckingEnabled() | Returns whether calls to add and setLayout are forwarded to the contentPane.
+boolean | isSelected() | Returns whether the JInternalFrame is the currently "selected" or active frame.
+protected void | moveToBack() | Convenience method that moves this component to position -1 if its parent is a JLayeredPane.
+protected void | moveToFront() | Convenience method that moves this component to position 0 if its parent is a JLayeredPane.
+protected void | pack() | Causes subcomponents of this JInternalFrame to be laid out at their preferred size.
+protected void | paintComponent( Graphics g ) | Overridden to allow optimized painting when the internal frame is being dragged.
+protected String | paramString() | Returns a string representation of this JInternalFrame.
+protected void | remove( Component comp ) | Removes the specified component from the container.
+protected void | removeInternalFrameListener( InternalFrameListener l ) | Removes the specified internal frame listener so that it no longer receives internal frame events from this internal frame.
+protected void | reshape( int x, int y, int width, int height ) | Moves and resizes this component.
+protected void | restoreSubcomponentFocus() | Requests the internal frame to restore focus to the last subcomponent that had focus.
+protected void | setClosable( boolean b ) | Sets whether this JInternalFrame can be closed by some user action.
+protected void | setClosed( boolean b ) | Closes this internal frame if the argument is true.
+protected void | setContentPane( Container c ) | Sets this JInternalFrame's contentPane property.
+protected void | setCursor( Cursor cursor ) | Sets the cursor image to the specified cursor.
+protected void | setDefaultCloseOperation( int operation ) | Sets the operation that will happen by default when the user initiates a "close" on this internal frame.
+protected void | setDesktopIcon( JInternalFrame.JDesktopIcon d ) | Sets the JDesktopIcon associated with this JInternalFrame.
+protected void | setFocusCycleRoot( boolean focusCycleRoot ) | Does nothing because JInternalFrames must always be roots of a focus traversal cycle.
+protected void | setFrameIcon( Icon icon ) | Sets an image to be displayed in the titlebar of this internal frame (usually in the top-left corner).
+protected void | setGlassPane( Component glass ) | Sets this JInternalFrame's glassPane property.
+protected void | setIcon( boolean b ) | Iconifies or de-iconifies this internal frame, if the look and feel supports iconification.
+protected void | setIconifiable( boolean b ) | Sets the iconable property, which must be true for the user to be able to make the JInternalFrame an icon.
+protected void | setJMenuBar( JMenuBar m ) | Sets the menuBar property for this JInternalFrame.
+protected void | setLayer( int layer ) | Convenience method for setting the layer attribute of this component.
+protected void | setLayer( Integer layer ) | Convenience method for setting the layer attribute of this component.
+protected void | setLayeredPane( JLayeredPane layered ) | Sets this JInternalFrame's layeredPane property.
+protected void | setLayout( LayoutManager manager ) | Ensures that, by default, the layout of this component cannot be set.
+protected void | setMaximizable( boolean b ) | Sets the maximizable property, which determines whether the JInternalFrame can be maximized by some user action.
+protected void | setMaximum( boolean b ) | Maximizes and restores this internal frame.
+protected void | setMenuBar( JMenuBar m )  Deprecated. | As of Swing version 1.0.3 replaced by setJMenuBar( JMenuBar m ).
+protected void | setNormalBounds( Rectangle r ) | Sets the normal bounds for this internal frame, the bounds that this internal frame would be restored to from its maximized state.
+protected void | setResizable( boolean b ) | Sets whether the JInternalFrame can be resized by some user action.
+protected void | setRootPane( JRootPane root ) | Sets the rootPane property for this JInternalFrame.
+protected void | setRootPaneCheckingEnabled( boolean enabled ) | Sets whether calls to add and setLayout are forwarded to the contentPane.
+protected void | setSelected( boolean selected ) | Selects or deselects the internal frame if it's showing.
+protected void | setTitle( String title ) | Sets the JInternalFrame title.
+protected void | setUI( InternalFrameUI ui ) | Sets the UI delegate for this JInternalFrame.
+protected void | show() | If the internal frame is not visible, brings the internal frame to the front, makes it visible, and attempts to select it.
+protected void | toBack() | Sends this internal frame to the back.
+protected void | toFront() | Brings this internal frame to the front.
+protected void | updateUI() | Notification from the UIManager that the look and feel has changed.
